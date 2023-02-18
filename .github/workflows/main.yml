@@ -21,19 +21,16 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-        persist-credentials: false # <--- this
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 18.13.0
+          node-version: 18
 
       - name: Install Dependencies
-        run: npm install
+          run: npm install
 
       - name: Build App
-        run: npm run build
+          run: npm run build
 
       - name: Semantic Release
         env:
